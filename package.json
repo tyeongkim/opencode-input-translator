@@ -1,0 +1,48 @@
+{
+  "name": "opencode-input-translator",
+  "version": "0.1.0",
+  "description": "OpenCode plugin that translates non-English user input to English",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "check": "biome check",
+    "check:fix": "biome check --fix",
+    "typecheck": "tsc --noEmit",
+    "build": "bun run check && tsdown",
+    "local-deploy": "bun run build && cp dist/index.mjs ~/.opencode/plugins/opencode-input-translator.mjs",
+    "prepublishOnly": "bun run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tyeongkim/opencode-input-translator"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "translator",
+    "i18n"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "typescript": "^5",
+    "@opencode-ai/plugin": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.2",
+    "@opencode-ai/plugin": "^1.2.6",
+    "@types/bun": "latest",
+    "tsdown": "^0.20.3"
+  },
+  "dependencies": {
+    "@ai-sdk/openai-compatible": "^2.0.30",
+    "ai": "^6.0.92",
+    "zod": "^4.3.6"
+  }
+}
