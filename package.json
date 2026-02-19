@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "OpenCode plugin that translates non-English user input to English",
   "type": "module",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
   "exports": {
     ".": "./dist/index.js",
     "./package.json": "./package.json"
