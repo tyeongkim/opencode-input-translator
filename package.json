@@ -1,6 +1,6 @@
 {
   "name": "opencode-input-translator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "OpenCode plugin that translates non-English user input to English",
   "type": "module",
   "main": "./dist/index.js",
