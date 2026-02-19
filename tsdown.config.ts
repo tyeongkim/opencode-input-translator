@@ -5,7 +5,9 @@ export default defineConfig({
   platform: 'node',
   outDir: './dist',
   target: 'ESNext',
-  dts: true,
+  outExtensions: () => ({ js: '.js' }),
+  dts: false,
   sourcemap: true,
+  minify: true,
   exports: true,
 });

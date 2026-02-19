@@ -1,11 +1,11 @@
 {
   "name": "opencode-input-translator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OpenCode plugin that translates non-English user input to English",
   "type": "module",
   "types": "dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.mjs",
+    ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
   "files": [
@@ -16,7 +16,7 @@
     "check:fix": "biome check --fix",
     "typecheck": "tsc --noEmit",
     "build": "bun run check && tsdown",
-    "local-deploy": "bun run build && cp dist/index.mjs ~/.opencode/plugins/opencode-input-translator.mjs",
+    "local-deploy": "bun run build && cp dist/index.js .opencode/plugins/opencode-input-translator.js",
     "prepublishOnly": "bun run build"
   },
   "repository": {
