@@ -8,5 +8,5 @@ export default defineConfig({
   outExtensions: () => ({ js: '.js' }),
   dts: false,
   sourcemap: true,
-  minify: true,
+  minify: false,
 });

@@ -1,4 +1,7 @@
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import {
+  createOpenAICompatible,
+  type OpenAICompatibleLanguageModelChatOptions,
+} from '@ai-sdk/openai-compatible';
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
 import type { TranslationResult, TranslatorConfig } from './types.ts';
@@ -28,7 +31,11 @@ export async function translateToEnglish(
         'Translate the following text to English. If the text is already in English, output it unchanged (as is).',
       prompt: text,
       maxRetries: 3,
-      abortSignal: AbortSignal.timeout(10 * 1000),
+      providerOptions: {
+        openai: {
+          textVerbosity: 'low',
+        } satisfies OpenAICompatibleLanguageModelChatOptions,
+      },
     });
 
     if (!result) throw new Error('No content in response');

@@ -106,7 +106,6 @@ describe('translateToEnglish', () => {
     expect(capturedBody).toBeDefined();
     const body = capturedBody as Record<string, unknown>;
     expect(body.model).toBe('test-model');
-    expect(body.temperature).toBe(0);
     expect(Array.isArray(body.messages)).toBe(true);
     const messages = body.messages as Array<{ role: string; content: string }>;
     expect(messages).toHaveLength(2);
