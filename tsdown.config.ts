@@ -9,5 +9,4 @@ export default defineConfig({
   dts: false,
   sourcemap: true,
   minify: true,
-  exports: true,
 });
